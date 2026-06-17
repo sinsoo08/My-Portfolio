@@ -300,26 +300,36 @@
 
   /* ---------- Projects ---------- */
   .proj-card{
-    background:var(--surface); border:1px solid var(--line);
+    display:block; background:var(--surface); border:1px solid var(--line);
     border-radius:16px; padding:28px 30px; margin-bottom:20px;
+    color:var(--ink); text-decoration:none;
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
   .proj-card:last-child{margin-bottom:0;}
-  .proj-card:hover{
+  .proj-card:hover, .proj-card:focus-visible{
     transform:translateY(-3px);
     box-shadow:0 16px 32px rgba(29,35,51,0.10);
     border-color:var(--line-strong);
+    text-decoration:none;
   }
   .proj-tag{
     font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--brand);
     font-weight:600; margin-bottom:10px; display:block;
   }
-  .proj-card h4{ margin:0 0 6px; font-size:19px; font-weight:700; }
+  .proj-card h4{ margin:0 0 6px; font-size:19px; font-weight:700; color:var(--ink); }
   .proj-role{ font-size:14px; color:var(--muted); margin:0 0 14px; }
   .proj-card p.desc{ margin:0; font-size:15px; color:var(--ink-soft); }
   .proj-foot{
     margin-top:34px; font-size:14.5px; color:var(--muted);
   }
+  .proj-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600;
+    color:var(--brand);
+  }
+  .proj-link:hover{ color:var(--brand-dark); text-decoration:none; }
+  .proj-link::after{ content:"→"; transition:transform .2s ease; }
+  .proj-card:hover .proj-link::after{ transform:translateX(3px); }
 
   /* ---------- Activities ---------- */
   .act-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
@@ -471,33 +481,37 @@
     <p class="eyebrow">PROJECTS</p>
     <h3 class="title">프로젝트 &amp; 활동</h3>
 
-    <div class="proj-card">
+    <a class="proj-card" href="hackathon.html">
       <span class="proj-tag mono">2025.11 · 해커톤</span>
       <h4>순천향 SW 해커톤</h4>
       <p class="proj-role">아두이노 기반 사회문제 해결 프로젝트 · PPT 제작 &amp; 디자인 담당</p>
       <p class="desc">팀원과 계속 의견을 나누며 기능을 더하고 빼는 과정을 반복했어요. 그 과정에서 사용자에게 정말 필요한 기능이 무엇인지 고민하는 법을 배웠습니다.</p>
-    </div>
+      <span class="proj-link">자세히 보기</span>
+    </a>
 
-    <div class="proj-card">
+    <a class="proj-card" href="route.html">
       <span class="proj-tag mono">2025.11 · 챌린지 · 3위</span>
       <h4>안산 직업교육 혁신지구 루트 챌린지</h4>
       <p class="proj-role">기업 분석 발표 프로젝트 · PPT 제작, 디자인, 자료조사</p>
       <p class="desc">많은 팀이 함께한 환경에서 제한된 시간 안에 정보를 효과적으로 전달하는 방법과 시각적 표현 역량을 키운 프로젝트였어요.</p>
-    </div>
+      <span class="proj-link">자세히 보기</span>
+    </a>
 
-    <div class="proj-card">
+    <a class="proj-card" href="braincode.html">
       <span class="proj-tag mono">2026.04 · 공모전 · 장려상</span>
       <h4>제4회 IT 코딩 발명 아이디어 및 에세이 경진대회</h4>
       <p class="proj-role">장애인의 일상을 돕는 애플리케이션 개발</p>
       <p class="desc">한 달간 매일 GitHub로 풀·푸시하며 작업 상황을 공유했고, 꾸준한 회의로 기능을 다듬었어요. 사용자 입장에서 UI/UX를 고민하는 프론트엔드의 역할을 깊이 이해하게 된 프로젝트입니다.</p>
-    </div>
+      <span class="proj-link">자세히 보기</span>
+    </a>
 
-    <div class="proj-card">
+    <a class="proj-card" href="auto.html">
       <span class="proj-tag mono">2026.06~ · 프로젝트 · 개인개발</span>
       <h4>마인크래프트 맵 배포 플랫폼 개발 (진행 중)</h4>
       <p class="proj-role">디자인 · 프론트엔드 · 백앤드</p>
       <p class="desc">마인크래프트 맵 콘텐츠를 효율적으로 배포·관리할 수 있는 웹 플랫폼을 개발하고 있습니다. 서비스 기획부터 UI/UX 설계, 프론트엔드·백엔드 구현, 배포 및 유지보수까지 전 과정을 담당하고 있습니다.</p>
-    </div>
+      <span class="proj-link">자세히 보기</span>
+    </a>
 
     <p class="proj-foot">더 많은 작업은 <a href="https://github.com/sinsoo08" target="_blank" rel="noopener">GitHub · @sinsoo08</a> 에서 볼 수 있어요.</p>
   </section>
