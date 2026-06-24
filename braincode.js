@@ -6,3 +6,40 @@ const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); } });
 }, { threshold: 0.16 });
 sections.forEach(s=>io.observe(s));
+
+/* ---------- Lightbox ---------- */
+const lb      = document.getElementById('lb');
+const lbImg   = document.getElementById('lb-img');
+const lbCap   = document.getElementById('lb-caption');
+const lbClose = document.getElementById('lb-close');
+
+function openLightbox(src, alt, caption) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lbCap.textContent = caption;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+}
+
+function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+}
+
+document.querySelectorAll('.screen-wrap img').forEach(img => {
+    img.addEventListener('dblclick', () => {
+        const fig     = img.closest('.screen-item');
+        const label   = fig.querySelector('.screen-label')?.textContent || '';
+        const desc    = fig.querySelector('.screen-desc')?.textContent  || '';
+        const caption = label ? `${label}  —  ${desc}` : desc;
+        openLightbox(img.src, img.alt, caption);
+    });
+});
+
+lbClose.addEventListener('click', closeLightbox);
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+});

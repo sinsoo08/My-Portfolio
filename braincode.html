@@ -78,6 +78,77 @@
     </section>
     <div class="node" data-target=""></div>
     <section class="pblock">
+      <p class="peyebrow">SCREENS</p>
+      <h3 class="ptitle">화면 구성</h3>
+      <p>디자인과 프론트엔드를 전담해 직접 만든 주요 화면들입니다. 장애 아동이 부담 없이 쓸 수 있도록 밝고 친근한 톤으로 일관되게 디자인했습니다.</p>
+      <div class="screens-grid">
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-main.png" alt="브레인코드 메인 랜딩 페이지" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">main.jsx</span>
+            <span class="screen-desc">메인 랜딩 · 서비스 소개</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-main2.png" alt="브레인코드 메인 페이지 기능 소개 섹션" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">main.jsx</span>
+            <span class="screen-desc">기능 소개 · 부모 연동 가능 · 게임 간편 소개</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-logup.png" alt="회원가입 페이지" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">SignUp.jsx</span>
+            <span class="screen-desc">회원가입 · 이메일·비밀번호 입력</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-kid.png" alt="아이 정보 입력 페이지" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">KidInfo.jsx</span>
+            <span class="screen-desc">아이 정보 입력</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-profile.png" alt="아바타 선택 페이지" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">ProfileSelect.jsx</span>
+            <span class="screen-desc">아바타 선택 · 캐릭터 5종</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-game.png" alt="뇌 영역 게임 선택 페이지" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">GameSelect.jsx</span>
+            <span class="screen-desc">뇌 영역 인터랙티브 맵 · 게임 선택</span>
+          </figcaption>
+        </figure>
+        <figure class="screen-item">
+          <div class="screen-wrap">
+            <img src="img/brain-stats.png" alt="플레이 통계 대시보드" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="screen-label mono">Stats.jsx</span>
+            <span class="screen-desc">플레이 통계 · 7일 점수 그래프</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <div class="node" data-target=""></div>
+    <section class="pblock">
       <p class="peyebrow">RESULT</p>
       <h3 class="ptitle">결과</h3>
       <div class="result-line"><span class="grade">행복일자리운동본부이사장상 (장려상)</span><span class="date">2026.04.18</span></div>
@@ -101,7 +172,15 @@
 
   <footer class="sitefoot">© 2026 신지수. Built with care.</footer>
 
-  <script src="braincode.js"></script>
+  <!-- Lightbox -->
+  <div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-label="이미지 확대 보기">
+    <button class="lb-close" id="lb-close" aria-label="닫기">✕</button>
+    <div class="lb-inner">
+      <img class="lb-img" id="lb-img" src="" alt="" />
+      <div class="lb-caption" id="lb-caption"></div>
+    </div>
+  </div>
 
+  <script src="braincode.js"></script>
 </body>
 </html>
